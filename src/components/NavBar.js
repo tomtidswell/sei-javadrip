@@ -31,9 +31,8 @@ class NavBar extends Component{
     //console.log('Nav props', this.props)
     //console.log(Auth.getTokenPayload())
     return (
-      <nav className="navbar is-warning">
+      <nav className="navbar is-transparent">
         <div className="navbar-brand">
-          <Link to="/" className="navbar-item">JavaDrip</Link>
           <a role="button"
             className={`navbar-burger ${this.state.navbarOpen ? 'is-active' : ''}`}
             onClick={this.toggleNavbar}>
@@ -46,6 +45,7 @@ class NavBar extends Component{
           <div className="navbar-end">
             <div className="navbar-item">
               <div className="buttons">
+                {this.props.location.pathname === '/settings' && <Link to="/" className="button is-success">Plan your day</Link>}
                 <Link to="/settings" className="is-success button">Settings</Link>
                 {Auth.isUser() && <a className="is-success button" onClick={()=>this.logout()}>Switch user</a>}
               </div>

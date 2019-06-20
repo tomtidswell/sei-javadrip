@@ -25,6 +25,7 @@ class Home extends Component{
           <i className="fas fa-tint drip-1"></i>
           <i className="fas fa-tint drip-2"></i>
           <i className="fas fa-cloud-sun-rain cloud-headline"></i>
+          <p className="subtitle">...plan your day whilst you sip</p>
         </div>
         <WhatToWear />
         {city === 'London' && <TravelStatus />}

@@ -86,14 +86,19 @@ class WhatToWear extends Component{
 
     if(id >= 200 && id <= 531){
       response = {...response, advice: 'There might be rain so take an umberella' }
+      response = {...response, icon: 'fas fa-cloud-rain' }
     } else if (id >= 600 && id < 700){
       response = {...response, advice: 'Its going to snow, so remember your wellies!' }
+      response = {...response, icon: 'fas fa-cloud-meatball' }
     } else if (id >= 700 && id < 800){
       response = {...response, advice: 'Take care, there will be low visibility' }
+      response = {...response, icon: 'fas fa-smog' }
     } else if (id === 800){
       response = {...response, advice: 'Its going to be a clear day remember your sunglasses' }
+      response = {...response, icon: 'fas fa-sun' }
     } else if (id >= 800 && id < 900){
       response = {...response, advice: 'Wear something bright to cheer yourself up, its going to be a cloudy day!' }
+      response = {...response, icon: 'fas fa-cloud' }
     }
 
     return response
@@ -120,21 +125,52 @@ class WhatToWear extends Component{
     console.log('Data at render:',this.state.data)
 
     // Completed state - show recommendations
-    const { advice, materials, colour, outerwear, layering } = this.state.recco
+    const { advice, materials, colour, outerwear, layering, icon } = this.state.recco
     return (
-      <section className="section complete">
+      <section className="section complete what-to-wear">
         <a role="button" className="navbar-burger is-active" onClick={()=>this.toggleComponent()}>
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
         </a>
-        <h2 className="title">Today you should wear</h2>
-        {advice && <p>{advice}</p>}
-        {materials && <p>Materials: {materials}</p>}
-        {colour && <p>Colour: {colour}</p>}
-        {outerwear && <p>Outerwear: {outerwear}</p>}
-        {layering && <p>For layering: {layering}</p>}
-        {this.state.data && <p>{Math.floor(this.state.data.main.temp)}°C</p>}
+
+        <div className="columns">
+
+          <div className="column">
+            <div className="card">
+              <header className="card-header">
+                <p className="card-header-title">Body Armour</p>
+              </header>
+              <div className="card-content card-body-armour">
+                {materials && <p><strong>Materials:</strong> {materials}</p>}
+                {colour && <p><strong>Colour:</strong> {colour}</p>}
+                {outerwear && <p><strong>Outerwear:</strong> {outerwear}</p>}
+                {layering && <p><strong>For layering:</strong> {layering}</p>}
+              </div>
+            </div>
+          </div>
+
+          <div className="column is-one-third">
+            <div className="card">
+              <header className="card-header">
+                <p className="card-header-title">Take note!</p>
+              </header>
+              <div className="card-content">
+                <p className="subtitle">{advice}</p>
+              </div>
+              <footer className="card-footer">
+                <p className="card-footer-item">
+                  {this.state.data && <span>{Math.floor(this.state.data.main.temp)}°C</span>}
+                </p>
+                <p className="card-footer-item">
+                  <i className={icon}></i>
+                </p>
+              </footer>
+            </div>
+          </div>
+
+        </div>
+
       </section>
     )
   }

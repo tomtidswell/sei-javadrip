@@ -23,7 +23,7 @@ const App = () => {
       <Fragment>
         <NavBar />
         <Switch>
-          <Route path="/settings" component={Settings} />
+          <Route exact path="/settings" component={Settings} />
           <Route path="/" component={Home} />
         </Switch>
       </Fragment>
