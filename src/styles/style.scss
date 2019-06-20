@@ -1,1 +1,157 @@
+html, body, div#root{
+  margin: 0;
+  height:100vh;
+}
 
+main{
+  min-height: calc(100% - 52px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: rgb(255,145,77);
+
+  .headline{
+    color: white;
+    position: relative;
+
+    h1{
+      font-family: serif, cursive;
+      font-weight: bold;
+      font-size: 5rem;
+      letter-spacing: -2px;
+    }
+    .drip-1{
+      font-size: 0.7rem;
+      position: absolute;
+      top: 130px;
+      right: 20px;
+    }
+    .drip-2{
+      font-size: 1.2rem;
+      position: absolute;
+      top: 110px;
+      right: 30px;
+    }
+    .cloud-headline{
+      font-size: 3rem;
+      position: absolute;
+      top: -5px;
+      left: 62px;
+
+    }
+  }
+
+
+  .initial, section{
+      //initial styles
+      width: calc(100% - 80px);
+      margin: 40px;
+    }
+
+  section{
+    position: relative;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+
+    .title{
+      color: white;
+    }
+
+    &.loading{
+      //loading styles
+    }
+    &.complete{
+      //complete styles (api processed succesfully)
+      background-color: #23d160;
+      border-radius: 4px;
+    }
+
+    a.navbar-burger{
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+
+  }
+}
+
+
+
+section.travel-status{
+  color: black;
+
+  //the first div
+  article:first-child{
+    border-radius: 10px 10px 0 0;
+  }
+
+  //all the divs, including the first
+  article{
+    position: relative;
+    padding: 0 15px;
+    width: 100%;
+    border-width: 1px 1px 0 1px;
+    border-style: solid;
+    border-color: #ddd;
+    background-color: white;
+    overflow: hidden;
+
+    h2{
+      margin: 0;
+      font-size: 1em;
+      padding-top: 8px;
+    }
+
+    p{
+      font-size: 0.8em;
+      margin: 0;
+      padding-bottom: 5px;
+    }
+
+    small{
+      transition: all 0.1s;
+      display: block;
+      padding-top: 5px;
+      padding-bottom: 15px;
+      height: 0;
+      padding: 0;
+    }
+
+    &.other-status{
+      background-color: lightyellow;
+      padding-right: 50px;
+    }
+
+    &::after{
+      content: '+';
+      position: absolute;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      width: 60px;
+      top: 0;
+      right: 0;
+      cursor: pointer;
+    }
+
+    &.active::after{
+        content: '-';
+    }
+
+    //these options switch between toggling all, or just the 'other-status' classed items
+    //&.other-status small:last-child{
+    &.active small:last-child{
+      height: inherit;
+      padding-bottom: 10px;
+    }
+
+    &#bakerloo { background-color: brown; }
+
+  }
+
+}
