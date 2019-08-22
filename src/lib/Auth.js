@@ -1,7 +1,7 @@
 
 class Auth {
   static setUserData(data){
-    localStorage.setItem('javadrip.portfolio', JSON.stringify(data) )
+    localStorage.setItem('javadrip.portfolio', JSON.stringify({...this.getUserData(), ...data }) )
   }
 
   static getUserData(){
@@ -13,7 +13,7 @@ class Auth {
 
   static isUser(){
     const data = this.getUserData()
-    //console.log('Token', token)
+    console.log('User data', data)
     return data ? true : false
     //console.log('token data', atob(parts[1]))
   }

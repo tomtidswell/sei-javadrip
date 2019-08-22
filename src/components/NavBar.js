@@ -23,8 +23,8 @@ class NavBar extends Component{
   }
 
   logout(){
-    Auth.logOut()
-    this.props.history.push('/')
+    Auth.deleteUser()
+    this.props.history.push('/settings')
   }
 
   render(){
@@ -47,7 +47,10 @@ class NavBar extends Component{
               <div className="buttons">
                 {this.props.location.pathname === '/settings' && <Link to="/" className="button is-success">Plan your day</Link>}
                 <Link to="/settings" className="is-success button">Settings</Link>
-                {Auth.isUser() && <a className="is-success button" onClick={()=>this.logout()}>Switch user</a>}
+                {Auth.isUser() && <a className="is-success button" onClick={()=>{
+                  this.logout()
+                }}
+                >Switch user</a>}
               </div>
             </div>
           </div>

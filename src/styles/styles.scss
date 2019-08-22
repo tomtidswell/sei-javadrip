@@ -1,3 +1,5 @@
+//original styles
+
 html, body, div#root{
   margin: 0;
   min-height:100vh;
@@ -28,7 +30,8 @@ main{
   .headline{
     color: white;
     position: relative;
-    text-shadow: 3px 3px 3px #555;
+    text-shadow: 4px 4px 3px #444;
+
 
     h1{
       font-family: serif, cursive;
@@ -41,13 +44,12 @@ main{
       position: absolute;
       top: 130px;
       right: 20px;
-      display: none;
     }
     .drip-2{
       font-size: 1.2rem;
       position: absolute;
-      top: 25px;
-      right: 39px;
+      top: 110px;
+      right: 30px;
     }
     .cloud-headline{
       font-size: 3rem;
@@ -56,23 +58,41 @@ main{
       left: 58px;
     }
     .subtitle{
-      color: white;
-      text-shadow: none;
+      color: rgb(82,113,255);
       font-family: serif, cursive;
-      font-size: 1.1rem;
+      font-size: 1rem;
+      font-weight: bold;
       position: absolute;
-      top: 85px;
-      left: 25px;
+      top: 90px;
+      left: 32px;
+      text-shadow: none;
     }
   }
 
 
   .initial, section{
-      //initial styles
-      width: calc(100% - 160px);
-      margin: 40px 80px;
-      box-shadow: 3px 3px 3px #555;
+    //initial styles
+    width: calc(100% - 200px);
+    margin: 40px 100px;
+    box-shadow: 10px 5px 5px #ffde59;
+  }
+
+  .initial{
+    font-family: 'Bungee Inline', serif;
+    .underground{
+      width: 45px;
+      padding-left: 10px;
     }
+    .bike{
+      width: 45px;
+      padding-left: 10px;
+    }
+    .wear{
+      width: 75px;
+      padding-left: 10px;
+    }
+  }
+
 
   section{
     position: relative;
@@ -81,17 +101,22 @@ main{
     align-items: center;
     justify-content: center;
     color: white;
-    box-shadow: 3px 3px 3px #555;
+    box-shadow: 10px 5px 5px #ffde59;
 
     .title{
       color: white;
+
     }
 
+    &.register{
+      //loading styles
+      background-color: #23d160;
+      border-radius: 6px;
+    }
     &.loading{
       //loading styles
       background-color: #23d160;
       border-radius: 6px;
-      font-family: 'Bungee Inline', serif;
     }
     &.complete{
       //complete styles (api processed succesfully)
@@ -105,6 +130,18 @@ main{
       right: 0;
     }
 
+  }
+}
+
+section.register{
+
+  select{
+    width: 214px;
+  }
+  form{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
   }
 }
 
@@ -187,4 +224,13 @@ section.travel-status{
 
   }
 
+}
+
+
+
+
+@media screen and (min-width: 1024px){
+  .navbar-burger.close {
+    display: block;
+  }
 }

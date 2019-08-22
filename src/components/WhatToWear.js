@@ -44,34 +44,34 @@ class WhatToWear extends Component{
       {  //30 degrees and above
         from: 30,
         to: 100,
-        materials: 'Light cotton, rayon, linen,performance polyester',
+        materials: 'Light cotton, rayon, linen, performance polyester',
         colour: 'Light',
-        outerwear: 'None or Only light breathable material!',
-        layering: 'Only light breathable material!'
+        outerwear: 'None or only light breathable material',
+        layering: 'Only light breathable material'
       },
       { //Between 20 and 30 degrees
         from: 20,
         to: 30,
         materials: 'Medium cotton/denim, rayon, perforemance polyester',
         colour: 'Light',
-        outerwear: 'Swearshirt, Light Jumper',
-        layering: 'T-Shirt'
+        outerwear: 'Swearshirt, light jumper',
+        layering: 'tshirt'
       },
       { // Between 10 and 20 degrees
         from: 10,
         to: 20,
         materials: 'Medium cotton/denim or polyester',
-        colour: 'Dark or Light',
+        colour: 'Dark or light',
         outerwear: 'Light jacket or jumper',
-        layering: 'T-Shirt & Sweatshirt'
+        layering: 'tshirt and a sweatshirt'
       },
       { // Below 10 degrees
         from: -30,
         to: 10,
-        materials: 'Wool,cashmere,heavy cotton,flannel,synthetic fibers',
+        materials: 'Wool, cashmere, heavy cotton, flannel, synthetic fibers',
         colour: 'Dark',
-        outerwear: 'Gore-Tex Shell, Heavy Wool, Down, Heavy Cotton',
-        layering: 'Thermal Underwear, Sweater'
+        outerwear: 'Gore-Tex shell, heavy wool, down, heavy cotton',
+        layering: 'Thermal underwear, sweater'
       }
     ]
 
@@ -110,7 +110,7 @@ class WhatToWear extends Component{
     if(!this.state.load) return (
       <a className="button is-success is-large initial"
         onClick={()=>this.toggleComponent()}>
-        What to wear?
+        <p>What to wear?</p><img src="./assets/What-to-wear-logo-1.png" className="wear" />
       </a>
     )
 
@@ -128,7 +128,7 @@ class WhatToWear extends Component{
     const { advice, materials, colour, outerwear, layering, icon } = this.state.recco
     return (
       <section className="section complete what-to-wear">
-        <a role="button" className="navbar-burger is-active" onClick={()=>this.toggleComponent()}>
+        <a role="button" className="navbar-burger is-active close" onClick={()=>this.toggleComponent()}>
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>

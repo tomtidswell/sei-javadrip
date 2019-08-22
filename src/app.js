@@ -5,7 +5,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import 'bulma'
 
 //styles
-import './styles/style.scss'
+import './styles/styles.scss'
 
 //components
 //import SecureRoute from './components/common/SecureRoute'
@@ -33,13 +33,7 @@ const App = () => {
 
 ReactDOM.render(<App />,document.getElementById('root'))
 
-// <BrowserRouter>
-//   <NavBar />
-//   <Switch>
-//     <Route path="/register" component={Register} />
-//     <Route path="/" component={Home} />
-//   </Switch>
-// </BrowserRouter>
+
 
 // javaDrip - your morning briefing while you sip
 
@@ -91,22 +85,6 @@ ReactDOM.render(<App />,document.getElementById('root'))
 // If it is snowing, recommend wellies and a coat
 
 
-
-
-// summary: Any summaries containing temperature or snow accumulation units will have their values in degrees Celsius or in centimeters (respectively).
-// nearestStormDistance: Kilometers.
-// precipIntensity: Millimeters per hour.
-// precipIntensityMax: Millimeters per hour.
-// precipAccumulation: Centimeters.
-// temperature: Degrees Celsius.
-// temperatureMin: Degrees Celsius.
-// temperatureMax: Degrees Celsius.
-// apparentTemperature: Degrees Celsius.
-// dewPoint: Degrees Celsius.
-// windSpeed: Meters per second.
-// windGust: Meters per second.
-// pressure: Hectopascals.
-// visibility: Kilometers.
 
 
 

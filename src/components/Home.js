@@ -1,6 +1,8 @@
 import React, { Component }  from 'react'
 import WhatToWear from './WhatToWear'
 import TravelStatus from './TravelStatus'
+import CycleRack from './CycleRack'
+
 import Auth from '../lib/Auth'
 
 class Home extends Component{
@@ -29,6 +31,7 @@ class Home extends Component{
         </div>
         <WhatToWear />
         {city === 'London' && <TravelStatus />}
+        {city === 'London' && <CycleRack />}
       </main>
     )
   }

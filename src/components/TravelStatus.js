@@ -40,7 +40,7 @@ class TravelStatus extends Component{
     if(!this.state.load) return (
       <a className="button is-success is-large initial"
         onClick={()=>this.toggleComponent()}>
-        Travel Status
+        What&lsquo;s going on <img src="./assets/underground.png" className="underground" />
       </a>
     )
 
@@ -54,7 +54,7 @@ class TravelStatus extends Component{
     // Completed state - show travel
     return (
       <section className="section complete travel-status">
-        <a role="button" className="navbar-burger is-active" onClick={()=>this.toggleComponent()}>
+        <a role="button" className="navbar-burger is-active close" onClick={()=>this.toggleComponent()}>
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
