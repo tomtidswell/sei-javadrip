@@ -1,5 +1,4 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
 import axios from 'axios'
 import Auth from '../lib/Auth'
 
@@ -40,9 +39,9 @@ class CycleRack extends React.Component {
 
     // Initial state - pre API load
     if(!this.state.load) return (
-      <a className="button is-success is-large initial"
+      <a className="button is-large initial"
         onClick={()=>this.toggleComponent()}>
-        Bikes nearby <img src="./assets/santan.png" className="bike" />
+        Your cycle rack <img src="./assets/santan.png" className="bike" />
       </a>
     )
 
@@ -88,7 +87,7 @@ class CycleRack extends React.Component {
 
         <div className="card">
           <header className="card-header">
-            <p className="card-header-title">Bikes nearby</p>
+            <p className="card-header-title">Your cycle rack</p>
           </header>
           <div className="card-content">
             <p className="subtitle">The nearest cycle point to you is {nearestBikePoint.commonName}</p>

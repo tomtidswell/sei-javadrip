@@ -1,14 +1,16 @@
+// new styles  
+
 html, body, div#root{
   margin: 0;
   min-height:100vh;
 }
 
 body{
-  background-color: rgb(255,145,77);
+  background-color: #ff673a;
   nav.navbar{
     background-color: inherit;
     .navbar-menu{
-      background-color: #ffde59;
+      background-color: #ff673a;
       position: absolute;
       right: 0;
       .buttons{
@@ -25,31 +27,26 @@ main{
   align-items: center;
   justify-content: space-evenly;
 
-  .headline{
+  header{
     color: white;
     position: relative;
-    text-shadow: 3px 3px 3px #555;
+    text-shadow: 0px 0px 5px white;
 
-    h1{
+    .title{
+      padding-top: 15px;
+      color: white;
       font-family: serif, cursive;
       font-weight: bold;
       font-size: 5rem;
       letter-spacing: -5px;
     }
-    .drip-1{
-      font-size: 0.7rem;
-      position: absolute;
-      top: 130px;
-      right: 20px;
-      display: none;
-    }
-    .drip-2{
+    .drip{
       font-size: 1.2rem;
       position: absolute;
       top: 25px;
       right: 39px;
     }
-    .cloud-headline{
+    .cloud{
       font-size: 3rem;
       position: absolute;
       top: -5px;
@@ -57,22 +54,43 @@ main{
     }
     .subtitle{
       color: white;
-      text-shadow: none;
-      font-family: serif, cursive;
+      letter-spacing: -1px;
+      font-family: sans-serif;
+      font-weight: bold;
       font-size: 1.1rem;
       position: absolute;
-      top: 85px;
-      left: 25px;
+      top: 86px;
+      left: 28px;
     }
   }
 
 
   .initial, section{
-      //initial styles
-      width: calc(100% - 160px);
-      margin: 40px 80px;
-      box-shadow: 3px 3px 3px #555;
+    //initial styles
+    width: calc(100% - 10vw);
+    min-height: 120px;
+    margin: 2vh 2vw;
+    box-shadow: 0px 0px 15px white;
+  }
+
+  .initial{
+    font-family: sans-serif;
+    letter-spacing: -2px;
+    color: #ff673a;
+    .underground{
+      width: 45px;
+      padding-left: 10px;
     }
+    .bike{
+      width: 45px;
+      padding-left: 10px;
+    }
+    .wear{
+      width: 75px;
+      padding-left: 10px;
+    }
+  }
+
 
   section{
     position: relative;
@@ -80,24 +98,10 @@ main{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    color: white;
-    box-shadow: 3px 3px 3px #555;
+    color: black;
+    border-radius: 6px;
+    background-color: white;
 
-    .title{
-      color: white;
-    }
-
-    &.loading{
-      //loading styles
-      background-color: #23d160;
-      border-radius: 6px;
-      font-family: 'Bungee Inline', serif;
-    }
-    &.complete{
-      //complete styles (api processed succesfully)
-      background-color: #23d160;
-      border-radius: 6px;
-    }
 
     a.navbar-burger{
       position: absolute;
@@ -137,6 +141,7 @@ section.travel-status{
       margin: 0;
       font-size: 1em;
       padding-top: 8px;
+      color: #ff673a;
     }
 
     p{

@@ -22,13 +22,12 @@ class Home extends Component{
 
     return (
       <main>
-        <div className="headline">
-          <h1 className="">JavaDrip</h1>
-          <i className="fas fa-tint drip-1"></i>
-          <i className="fas fa-tint drip-2"></i>
-          <i className="fas fa-cloud-sun-rain cloud-headline"></i>
-          <p className="subtitle">...plan your day whilst you sip</p>
-        </div>
+        <header>
+          <p className="title">JavaDrip</p>
+          <i className="fas fa-tint drip"></i>
+          <i className="fas fa-cloud-sun-rain cloud"></i>
+          <p className="subtitle">plan your day whilst you sip</p>
+        </header>
         <WhatToWear />
         {city === 'London' && <TravelStatus />}
         {city === 'London' && <CycleRack />}

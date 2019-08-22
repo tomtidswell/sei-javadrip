@@ -5,7 +5,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import 'bulma'
 
 //styles
-import './styles/styles.scss'
+import './styles/style.scss'
 
 //components
 //import SecureRoute from './components/common/SecureRoute'

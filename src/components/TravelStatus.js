@@ -38,7 +38,7 @@ class TravelStatus extends Component{
 
     // Initial state - pre API load
     if(!this.state.load) return (
-      <a className="button is-success is-large initial"
+      <a className="button is-large initial"
         onClick={()=>this.toggleComponent()}>
         What&lsquo;s going on <img src="./assets/underground.png" className="underground" />
       </a>

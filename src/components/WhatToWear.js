@@ -108,7 +108,7 @@ class WhatToWear extends Component{
 
     // Initial state - pre API load
     if(!this.state.load) return (
-      <a className="button is-success is-large initial"
+      <a className="button is-large initial"
         onClick={()=>this.toggleComponent()}>
         <p>What to wear?</p><img src="./assets/What-to-wear-logo-1.png" className="wear" />
       </a>
