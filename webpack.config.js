@@ -7,9 +7,9 @@ const Dotenv = require('dotenv-webpack')
 module.exports = {
   entry: './src/app.js',
   output: {
+    path: path.join(__dirname, 'dist'),
     filename: 'bundle.js',
-    path: path.resolve('dist'),
-    publicPath: './'
+    publicPath: '/sei-javadrip'
   },
   module: {
     rules: [
@@ -31,7 +31,8 @@ module.exports = {
     open: true,
     port: 8000,
     watchContentBase: true,
-    historyApiFallback: true
+    historyApiFallback: true,
+    openPage: 'sei-javadrip'
   },
   plugins: [
     new Dotenv(),

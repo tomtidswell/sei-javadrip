@@ -24,6 +24,12 @@ I was one member of a team of two who created the initial release
 * [**Cliff Conolly**](https://github.com/Cliff-Conolly/sei-Javadrip) - *v1.0*
 * **Me** - *v1 onwards*
 
+## Major Achievements
+The parts of the project I am most proud of are:
+* The way the design of the app considers the loading speed of the different APIs involved. Rather than trigger all the required APIs in one go, each API is requested once the user selects the section they would like to expand
+* The deployment. Previously I had always deployed React applications to the main directory on a server. For hosting this site within my portfolio, I needed to adapt the app to work correctly from a sub-domain (on GitHub pages). This needed changes to the BrowserRouter configuration and the Webpack config. I applied these changes by researching the issue myself. 
+
+
 ## Functionality
 
 ### User Journeys

@@ -7,15 +7,16 @@ html, body, div#root{
 
 body{
   background-color: #ff673a;
-  nav.navbar{
+}
+
+nav.navbar{
+  background-color: inherit;
+  .navbar-menu{
     background-color: inherit;
-    .navbar-menu{
-      background-color: #ff673a;
-      position: absolute;
-      right: 0;
-      .buttons{
-        justify-content: flex-end;
-      }
+    position: absolute;
+    right: 0;
+    .buttons{
+      justify-content: flex-end;
     }
   }
 }
@@ -63,54 +64,39 @@ main{
       left: 28px;
     }
   }
+}
 
+.initial, section{
+  //initial styles
+  width: calc(100% - 10vw);
+  min-height: 120px;
+  margin: 2vh 2vw;
+  box-shadow: 0px 0px 15px white;
+}
 
-  .initial, section{
-    //initial styles
-    width: calc(100% - 10vw);
-    min-height: 120px;
-    margin: 2vh 2vw;
-    box-shadow: 0px 0px 15px white;
-  }
+.initial{
+  font-family: sans-serif;
+  letter-spacing: -2px;
+  color: #ff673a;
+}
 
-  .initial{
-    font-family: sans-serif;
-    letter-spacing: -2px;
-    color: #ff673a;
-    .underground{
-      width: 45px;
-      padding-left: 10px;
-    }
-    .bike{
-      width: 45px;
-      padding-left: 10px;
-    }
-    .wear{
-      width: 75px;
-      padding-left: 10px;
-    }
-  }
-
-
-  section{
-    position: relative;
-    display:flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    color: black;
-    border-radius: 6px;
-    background-color: white;
-
-
-    a.navbar-burger{
-      position: absolute;
-      top: 0;
-      right: 0;
-    }
-
+section.section{
+  position: relative;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 3.5rem;
+  color: black;
+  border-radius: 6px;
+  background-color: white;
+  .navbar-burger {
+    position: absolute;
+    top: 0;
+    right: 0;
   }
 }
+
 
 section.what-to-wear{
   div.card-content.card-body-armour p{
@@ -120,11 +106,6 @@ section.what-to-wear{
 
 section.travel-status{
   color: black;
-
-  //the first div
-  article:first-child{
-    border-radius: 10px 10px 0 0;
-  }
 
   //all the divs, including the first
   article{
@@ -137,11 +118,10 @@ section.travel-status{
     background-color: white;
     overflow: hidden;
 
-    h2{
+    h3{
       margin: 0;
       font-size: 1em;
       padding-top: 8px;
-      color: #ff673a;
     }
 
     p{
@@ -188,8 +168,17 @@ section.travel-status{
       padding-bottom: 10px;
     }
 
-    &#bakerloo { background-color: brown; }
-
   }
 
+  article:last-child{
+    border-bottom-width: 1px;
+  }
+
+}
+
+
+@media screen and (min-width: 1024px){
+  .navbar-burger {
+      display: block;
+  }
 }

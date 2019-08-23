@@ -28,7 +28,7 @@ class NavBar extends Component{
   }
 
   render(){
-    //console.log('Nav props', this.props)
+    // console.log('Nav props', this.props)
     //console.log(Auth.getTokenPayload())
     return (
       <nav className="navbar is-transparent">
@@ -46,8 +46,8 @@ class NavBar extends Component{
             <div className="navbar-item">
               <div className="buttons">
                 {this.props.location.pathname === '/settings' && <Link to="/" className="button is-success">Plan your day</Link>}
-                <Link to="/settings" className="is-success button">Settings</Link>
-                {Auth.isUser() && <a className="is-success button" onClick={()=>{
+                <Link to="/settings" className="button">Settings</Link>
+                {Auth.isUser() && <a className="button" onClick={()=>{
                   this.logout()
                 }}
                 >Switch user</a>}

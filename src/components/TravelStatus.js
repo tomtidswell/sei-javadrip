@@ -40,7 +40,7 @@ class TravelStatus extends Component{
     if(!this.state.load) return (
       <a className="button is-large initial"
         onClick={()=>this.toggleComponent()}>
-        What&lsquo;s going on <img src="./assets/underground.png" className="underground" />
+        Public transport
       </a>
     )
 
@@ -69,7 +69,7 @@ class TravelStatus extends Component{
               onClick={this.clickedLine}
               className={status === 'Good Service' ? 'good-status' : 'other-status'}
             >
-              <h2>{tube.name}</h2>
+              <h3>{tube.name}</h3>
               <p>{status}</p>
               <small>{status === 'Good Service' ? 'The line is operating normally' : disruption}</small>
             </article>

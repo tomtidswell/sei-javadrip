@@ -3,7 +3,6 @@ import React, { Fragment } from 'react'
 import ReactDOM from 'react-dom'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import 'bulma'
-
 //styles
 import './styles/style.scss'
 
@@ -19,11 +18,11 @@ import Settings from './components/Settings'
 //the secure route tags (functions) are custom, and is a functional component in the common folder
 const App = () => {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={process.env.SUBDIR}>
       <Fragment>
         <NavBar />
         <Switch>
-          <Route exact path="/settings" component={Settings} />
+          <Route path="/settings" component={Settings} />
           <Route path="/" component={Home} />
         </Switch>
       </Fragment>
@@ -33,59 +32,3 @@ const App = () => {
 
 ReactDOM.render(<App />,document.getElementById('root'))
 
-
-
-// javaDrip - your morning briefing while you sip
-
-// JOURNEYS
-
-//Journey A - first time access
-// 1. User chooses and saves location and name
-// 2. Shows the javaDrip
-
-// Journey B - returning user
-// Shows the javaDrip
-
-//Journey C - user wants to change location
-// 1. User chooses to switch cities   (or maybe detect current location based on browser location API)
-// 2. User chooses and saves location
-// 3. Shows javaDrip
-
-
-// WIREFRAMES
-// 1. - the javaDrip
-// 2. - choosing and setting location
-
-
-// PSEUDOCODE
-// A. - the javaDrip
-
-// Display title - "What to wear"
-
-// When clicked, the state changes, and does the following.....
-
-// Hardcode to London (placeholder for future for other locations)
-
-// Use the location to fetch the next morning's weather from the OpenWeatherMap API
-
-// Run the rules on the weather data to determine the clothes the user should wear,
-
-// Save the recommendations into state along with the weather data - that retriggers the render
-
-// Render the recommendation in the component
-
-
-
-
-// RULES
-// Work out what the weather 'feels like' based on ???
-// If the feels like is under 10 deg, recommend a coat
-// If the feels like is under 15 deg, recommend a jumper
-// If it is raining, recommend an umberella
-// If it is snowing, recommend wellies and a coat
-
-
-
-
-
-// https://api.darksky.net/forecast/884e2989584a1311deac60a086aac988/51.5074,0.1278?exclude=minutely,daily,currently&units=si

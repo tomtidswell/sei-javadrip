@@ -13,12 +13,12 @@ class WhatToWear extends Component{
     if(!this.state.load) return
     //if we already have data, dont load it again
     if(this.state.data) return
-    //axios.get('http://api.darksky.net/forecast/884e2989584a1311deac60a086aac988/51.5074,0.1278?exclude=minutely,daily,currently&units=si')
+    //axios.get('http://api.darksky.net/forecast/<key>/51.5074,0.1278?exclude=minutely,daily,currently&units=si')
 
     const city = Auth.getUserData() ? Auth.getUserData().city : 'London'
     //console.log('current city', city)
 
-    axios.get(`http://api.openweathermap.org/data/2.5/weather?q=${city},uk&units=metric&APPID=1383dd69854325492a06d582fb05ee36`)
+    axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${city},uk&units=metric&APPID=${process.env.APPID}`)
       .then( ({ data }) => {
         //console.log('Raw:',data)
         const weather =  this.extractWeatherData(data)
@@ -110,7 +110,7 @@ class WhatToWear extends Component{
     if(!this.state.load) return (
       <a className="button is-large initial"
         onClick={()=>this.toggleComponent()}>
-        <p>What to wear?</p><img src="./assets/What-to-wear-logo-1.png" className="wear" />
+        What to wear?
       </a>
     )
 

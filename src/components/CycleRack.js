@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import axios from 'axios'
 import Auth from '../lib/Auth'
 
@@ -6,7 +7,7 @@ class CycleRack extends React.Component {
   constructor() {
     super()
 
-    this.state = { points: null, load: false }
+    this.state = { points: null, load: false, userData: Auth.getUserData() }
   }
 
   componentDidUpdate() {
@@ -15,9 +16,13 @@ class CycleRack extends React.Component {
     //if we already have data, dont load it again
     if(this.state.points) return
 
-    this.userData = Auth.getUserData()
-    //console.log(this.userData)
-    this.getBikePoints(this.userData.lat, this.userData.lon, 1000)
+    if (!this.state.userData) return
+    const { userData } = this.state
+
+    if (userData.lat && userData.lon){
+      console.log('fetching bike points')
+      this.getBikePoints(userData.lat, userData.lon, 1000)
+    }
   }
 
   getBikePoints(lat, lon, radius) {
@@ -35,14 +40,22 @@ class CycleRack extends React.Component {
 
   render() {
 
-    console.log(this.state.points)
+    console.log('user data:',this.state.userData)
+    console.log('bike points:',this.state.points)
 
     // Initial state - pre API load
     if(!this.state.load) return (
       <a className="button is-large initial"
         onClick={()=>this.toggleComponent()}>
-        Your cycle rack <img src="./assets/santan.png" className="bike" />
+        Your cycle rack
       </a>
+    )
+    
+    // API loading state
+    if (!this.state.userData || !this.state.userData.postcode) return (
+      <section className="section loading">
+        <Link to="/settings">Set up your home postcode to use this feature</Link>
+      </section>
     )
 
     // API loading state
