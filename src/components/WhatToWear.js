@@ -115,10 +115,8 @@ class WhatToWear extends Component{
     )
 
     // API loading state
-    if(!this.state.data) return (
-      <section className="section loading">
-        <h1>Loading...</h1>
-      </section>
+    if (!this.state.data) return (
+      <a className="button is-large initial is-loading"></a>
     )
 
     console.log('Recommendations:',this.state.recco)
@@ -127,49 +125,44 @@ class WhatToWear extends Component{
     // Completed state - show recommendations
     const { advice, materials, colour, outerwear, layering, icon } = this.state.recco
     return (
-      <section className="section complete what-to-wear">
+      <section className="section what-to-wear">
+        <h2>What to wear?</h2>
         <a role="button" className="navbar-burger is-active close" onClick={()=>this.toggleComponent()}>
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
         </a>
 
-        <div className="columns">
-
-          <div className="column">
-            <div className="card">
-              <header className="card-header">
-                <p className="card-header-title">Body Armour</p>
-              </header>
-              <div className="card-content card-body-armour">
-                {materials && <p><strong>Materials:</strong> {materials}</p>}
-                {colour && <p><strong>Colour:</strong> {colour}</p>}
-                {outerwear && <p><strong>Outerwear:</strong> {outerwear}</p>}
-                {layering && <p><strong>For layering:</strong> {layering}</p>}
-              </div>
-            </div>
+        
+        <div className="card">
+          <header className="card-header">
+            <p className="card-header-title">Body Armour</p>
+          </header>
+          <div className="card-content card-body-armour">
+            {materials && <p><strong>Materials:</strong> {materials}</p>}
+            {colour && <p><strong>Colour:</strong> {colour}</p>}
+            {outerwear && <p><strong>Outerwear:</strong> {outerwear}</p>}
+            {layering && <p><strong>For layering:</strong> {layering}</p>}
           </div>
-
-          <div className="column is-one-third">
-            <div className="card">
-              <header className="card-header">
-                <p className="card-header-title">Take note!</p>
-              </header>
-              <div className="card-content">
-                <p className="subtitle">{advice}</p>
-              </div>
-              <footer className="card-footer">
-                <p className="card-footer-item">
-                  {this.state.data && <span>{Math.floor(this.state.data.main.temp)}°C</span>}
-                </p>
-                <p className="card-footer-item">
-                  <i className={icon}></i>
-                </p>
-              </footer>
-            </div>
-          </div>
-
         </div>
+
+        <div className="card">
+          <header className="card-header">
+            <p className="card-header-title">Take note!</p>
+          </header>
+          <div className="card-content">
+            <p className="subtitle">{advice}</p>
+          </div>
+          <footer className="card-footer">
+            <p className="card-footer-item">
+              {this.state.data && <span>{Math.floor(this.state.data.main.temp)}°C</span>}
+            </p>
+            <p className="card-footer-item">
+              <i className={icon}></i>
+            </p>
+          </footer>
+        </div>
+
 
       </section>
     )

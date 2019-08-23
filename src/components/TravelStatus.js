@@ -46,35 +46,34 @@ class TravelStatus extends Component{
 
     // API loading state
     if(!this.state.data) return (
-      <section className="section loading">
-        <h1>Loading...</h1>
-      </section>
+      <p className="button is-large initial is-loading"></p>
     )
 
     // Completed state - show travel
     return (
-      <section className="section complete travel-status">
+      <section className="section travel-status">
         <a role="button" className="navbar-burger is-active close" onClick={()=>this.toggleComponent()}>
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
         </a>
-        <h2 className="title">Travel Status</h2>
-        {this.state.data.map(tube => {
-          const status = tube.lineStatuses[0].statusSeverityDescription
-          const disruption = tube.lineStatuses[0].reason
-          return (
-            <article
-              key={tube.id}
-              onClick={this.clickedLine}
-              className={status === 'Good Service' ? 'good-status' : 'other-status'}
-            >
-              <h3>{tube.name}</h3>
-              <p>{status}</p>
-              <small>{status === 'Good Service' ? 'The line is operating normally' : disruption}</small>
-            </article>
-          )
-        })}
+        <h2>Public transport</h2>
+        <div className="card">
+          {this.state.data.map(tube => {
+            const status = tube.lineStatuses[0].statusSeverityDescription
+            const disruption = tube.lineStatuses[0].reason
+            return (
+              <article
+                key={tube.id}
+                onClick={this.clickedLine}
+                className={status === 'Good Service' ? 'good-status' : 'other-status'}>
+                <h3>{tube.name}</h3>
+                <p>{status}</p>
+                <small>{status === 'Good Service' ? 'The line is operating normally' : disruption}</small>
+              </article>
+            )
+          })}
+        </div>
       </section>
     )
   }

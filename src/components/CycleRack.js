@@ -53,23 +53,24 @@ class CycleRack extends React.Component {
     
     // API loading state
     if (!this.state.userData || !this.state.userData.postcode) return (
-      <section className="section loading">
-        <Link to="/settings">Set up your home postcode to use this feature</Link>
+      <section className="button is-large cycle-rack">
+        <Link to="/settings">
+          Set up your home postcode to use this feature
+        </Link>
       </section>
     )
 
     // API loading state
     if(!this.state.points) return (
-      <section className="section loading">
-        <h1>Loading...</h1>
-      </section>
+      <p className="button is-large initial is-loading"></p>
     )
 
 
     // API loading state
     if(this.state.points.length === 0) return (
-      <section className="section loading">
-        <h1>There are no bike points near your postcode</h1>
+      <section className="section cycle-rack">
+        There are no bike points near your postcode.&nbsp;
+        <Link to="/settings"> Change it?</Link>
       </section>
     )
 
@@ -90,7 +91,8 @@ class CycleRack extends React.Component {
     //console.log(pointData)
 
     return (
-      <section className="section complete cycle-rack">
+      <section className="section cycle-rack">
+        <h2>Your cycle rack</h2>
         <a role="button" className="navbar-burger is-active close" onClick={()=>this.toggleComponent()}>
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
@@ -99,11 +101,8 @@ class CycleRack extends React.Component {
 
 
         <div className="card">
-          <header className="card-header">
-            <p className="card-header-title">Your cycle rack</p>
-          </header>
           <div className="card-content">
-            <p className="subtitle">The nearest cycle point to you is {nearestBikePoint.commonName}</p>
+            <p className="subtitle">The nearest cycle point to you is <strong>{nearestBikePoint.commonName}</strong></p>
           </div>
           <footer className="card-footer">
             <p className="card-footer-item">
