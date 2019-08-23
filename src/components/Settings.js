@@ -48,9 +48,9 @@ class Settings extends React.Component {
     this.userData.city
     console.log('data', this.state.data, this.state.errors)
     return (
-      <main>
+      <main className="settings-page">
+        <h1 className="title">Set your location and preferences</h1>
         <section className="section register">
-          <h1 className="title">Set your location and preferences</h1>
 
           <div className="field">
             <p className="control has-icons-left">
@@ -69,24 +69,22 @@ class Settings extends React.Component {
             </p>
           </div>
 
-          <form onSubmit={this.confirmPostcode}>
-            <div className="field">
-              <p className="control has-icons-left">
-                <input
-                  className={`input ${this.state.errors.postcode ? 'is-danger' : '' }`}
-                  placeholder="Postcode"
-                  type="text"
-                  value={this.state.data.postcode.toUpperCase()}
-                  name="postcode"
-                  onChange={this.handleChange}/>
-                <span className="icon is-small is-left">
-                  <i className="fas fa-map-marker-alt"></i>
-                </span>
-                {this.state.errors.postcode && <small className="help is-danger">The postcode could not be found</small>}
-              </p>
-            </div>
-            <button type="submit" className="button is-info">Save</button>
-          </form>
+          <div className="field">
+            <p className="control has-icons-left">
+              <input
+                className={`input ${this.state.errors.postcode ? 'is-danger' : '' }`}
+                placeholder="Postcode"
+                type="text"
+                value={this.state.data.postcode.toUpperCase()}
+                name="postcode"
+                onChange={this.handleChange}/>
+              <span className="icon is-small is-left">
+                <i className="fas fa-map-marker-alt"></i>
+              </span>
+              {this.state.errors.postcode && <small className="help is-danger">The postcode could not be found</small>}
+            </p>
+          </div>
+          <button className="button is-info" onClick={this.confirmPostcode}>Save</button>
 
         </section>
       </main>
