@@ -51,6 +51,8 @@ Journey C - user wants to change location
 
 In the initial state, three small tiles appear, and when clicked will expand
 
+![Animated JavaDrip](readme_docs/screenshots/homefull.gif)
+
 * Display title - "What to wear". When clicked, the state changes, and expands to include:
     * Hardcode the location to London (placeholder for future for other locations)
     * Use the location to fetch the next morning's weather from the OpenWeatherMap API
@@ -81,9 +83,14 @@ This uses local storage to save the users home city and postcode.
 ## Versioning
 
 #### v1.0
-[JavaDrip version 1](https://tomtidswell.github.io/sei-Javadrip/)
+[JavaDrip version 1](https://tomtidswell.github.io/sei-javadrip/)
 One week project, ended with a demo and presentation. MVP was complete.
 
 #### v2.0
-_...in progress_
+* improved and modernised the styling
+* upgraded weather API to https
+* cleaner interface, removed unnecessary images
+* standardised the fonts
+* fixed font-rendering on mobile
+* _...in progress_
 
