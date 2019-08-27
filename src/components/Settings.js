@@ -37,7 +37,7 @@ class Settings extends React.Component {
     if(!this.state.data.postcode || this.state.data.postcode === ' ') return null
     axios.get(`https://api.postcodes.io/postcodes/${this.state.data.postcode}`)
       .then(res => {
-        console.log(res.data)
+        // console.log(res.data)
         Auth.setUserData({ postcode: this.state.data.postcode, lon: res.data.result.longitude, lat: res.data.result.latitude })
         this.props.history.push('/')
       })
