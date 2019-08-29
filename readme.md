@@ -142,3 +142,9 @@ One week project, ended with a demo and presentation. MVP was complete.
 * fixed font-rendering on mobile
 * _...in progress_
 
+
+## Key Learning
+This project was great practice for learning some React fundamentals. In particular:
+* Choosing when to make use of component did update
+* Designing pages with multiple components and sub components
+* Great practice using a CSS framework for rapid development
