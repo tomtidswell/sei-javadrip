@@ -24,10 +24,19 @@ I was one member of a team of two who created the initial release
 * [**Cliff Conolly**](https://github.com/Cliff-Conolly/sei-Javadrip) - *v1.0*
 * **Me** - *v1 onwards*
 
-## Major Achievements
+## Wins
 The parts of the project I am most proud of are:
 * The way the design of the app considers the loading speed of the different APIs involved. Rather than trigger all the required APIs in one go, each API is requested once the user selects the section they would like to expand
 * The deployment. Previously I had always deployed React applications to the main directory on a server. For hosting this site within my portfolio, I needed to adapt the app to work correctly from a sub-domain (on GitHub pages). This needed changes to the BrowserRouter configuration and the Webpack config. I applied these changes by researching the issue myself. 
+
+## Challenges
+* This project was my first taste of teamwork when building a full stack app. I found distributing the work effectively quite difficult, but we overcame this with extensive planning and the use of Trello for assigning features
+
+## Key Learning
+This project was great practice for learning some React fundamentals. In particular:
+* Choosing when to make use of component did update
+* Designing pages with multiple components and sub components
+* Great practice using a CSS framework for rapid development
 
 ## Design process
 As this was a team project, it was very important to ensure we were moving towards the same goal. After using a mind map to generate ideas, we created a design mockup in Canva to settle on an approach which we could each envisage.
@@ -142,9 +151,3 @@ One week project, ended with a demo and presentation. MVP was complete.
 * fixed font-rendering on mobile
 * _...in progress_
 
-
-## Key Learning
-This project was great practice for learning some React fundamentals. In particular:
-* Choosing when to make use of component did update
-* Designing pages with multiple components and sub components
-* Great practice using a CSS framework for rapid development
