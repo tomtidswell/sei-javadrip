@@ -139,15 +139,21 @@ When clicked, the state changes, and expands to include:
 
 ## Versioning
 
-#### v1.0
+### v1.0
 [JavaDrip version 1](https://tomtidswell.github.io/sei-javadrip/)
 One week project, ended with a demo and presentation. MVP was complete.
 
-#### v2.0
+### v2.0
 * improved and modernised the styling
 * upgraded weather API to https
 * cleaner interface, removed unnecessary images
 * standardised the fonts
 * fixed font-rendering on mobile
 * _...in progress_
+
+### Future features
+* A more intelligent use of the APIs in the background. Fetch the data asynchronously
+* Additional sections for morning routine
+* Automatic location switching depending on browser/device location
+* Better features for non London locations including transport data
 
